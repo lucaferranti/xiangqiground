@@ -10,8 +10,7 @@ const pawn =
   (x1, y1, x2, y2) =>
     diff(x1, x2) < 2 &&
     (color === 'white'
-      ? // allow 2 squares from first two ranks, for horde
-        y2 === y1 + 1 || (y1 >= 5 && y1 === y2 && (x1 === x2 + 1 || x1 === x2 - 1))
+      ? y2 === y1 + 1 || (y1 >= 5 && y1 === y2 && (x1 === x2 + 1 || x1 === x2 - 1))
       : y2 === y1 - 1 || (y1 <= 4 && y1 === y2 && (x1 === x2 + 1 || x1 === x2 - 1)));
 
 export const chariot: Mobility = (x1, y1, x2, y2) => {
@@ -26,18 +25,23 @@ export const horse: Mobility = (x1, y1, x2, y2) => {
 
 export const elephant: Mobility = (x1, y1, x2, y2) => {
   const xd = diff(x1, x2);
-  return xd === diff(y1, y2) && xd === 2;
+  return xd === diff(y1, y2) && xd === 2 && (y1 <= 4 ? y2 <= 4 : y2 >= 5);
 };
 
 const advisor: Mobility = (x1, y1, x2, y2) => {
   const xd = diff(x1, x2);
-  return xd === diff(y1, y2) && xd === 1;
+  return xd === diff(y1, y2) && xd === 1 && 3 <= x2 && x2 <= 5 && (y1 <= 2 ? y2 <= 2 : y2 >= 7);
 };
 
 export const king: Mobility = (x1, y1, x2, y2) => {
   const xd = diff(x1, x2);
   const yd = diff(y1, y2);
-  return (xd === 0 && (yd === 1 || yd === -1)) || (yd === 0 && (xd === 1 || xd === -1));
+  return (
+    3 <= x2 &&
+    x2 <= 5 &&
+    (y1 <= 2 ? y2 <= 2 : y2 >= 7) &&
+    ((xd === 0 && (yd === 1 || yd === -1)) || (yd === 0 && (xd === 1 || xd === -1)))
+  );
 };
 
 export function premove(pieces: cg.Pieces, key: cg.Key): cg.Key[] {
