@@ -67,7 +67,6 @@ const ground = Xiangqiground(document.body, config);
 - [Default config values](https://github.com/lucaferranti/xiangqiground/tree/main/src/state.ts)
 - [API type signatures](https://github.com/lucaferranti/xiangqiground/tree/main/src/api.ts)
 - [Simple standalone example](https://github.com/lucaferranti/xiangqiground/blob/main/demo.html)
-- [Examples repo](https://github.com/lucaferranti/xiangqiground-examples/tree/main/src/units)
 - [Base CSS](https://github.com/lucaferranti/xiangqiground/blob/main/assets/xiangqiground.base.css)
 
 ## Development
@@ -92,6 +91,6 @@ pnpm run dist
 
 ## Acknowledgement
 
-Xiangqiground is a fork of [chessground](https://github.com/lichess-org/chessground) adapted to xiangqi. This work would not have been possible without the amazing work from the lichess team.
+Xiangqiground is a rewrite of [chessground](https://github.com/lichess-org/chessground) adapted to xiangqi. This work would not have been possible without the amazing work from the lichess team. On the other hand, most bugs are probably my own.
 
 The pieces design used in the demo is from wikimedia.

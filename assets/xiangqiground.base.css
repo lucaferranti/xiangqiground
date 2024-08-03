@@ -2,6 +2,8 @@
   box-sizing: content-box;
   position: relative;
   display: block;
+  margin-top: 25px;
+  margin-bottom: 25px;
 }
 
 cg-container {
@@ -129,9 +131,9 @@ piece.fading {
   position: absolute;
   display: flex;
   pointer-events: none;
-  opacity: 0.8;
+  opacity: 1;
   font-family: sans-serif;
-  font-size: 9px;
+  font-size: 14px;
 }
 
 .cg-wrap coords.ranks {
@@ -152,16 +154,24 @@ piece.fading {
 }
 
 .cg-wrap coords.files {
-  bottom: -4px;
-  left: 24px;
+  bottom: -25px;
+  left: 0;
   flex-flow: row;
   width: 100%;
-  height: 16px;
+  height: 20px;
   text-transform: uppercase;
   text-align: center;
 }
-
-.cg-wrap coords.files.black {
+.cg-wrap coords.files.top {
+  top: -25px;
+  left: 0;
+  flex-flow: row;
+  width: 100%;
+  height: 20px;
+  text-transform: uppercase;
+  text-align: center;
+}
+.cg-wrap coords.files.rev {
   flex-flow: row-reverse;
 }
 

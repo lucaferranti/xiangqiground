@@ -13,8 +13,6 @@ export interface HeadlessState {
   lastMove?: cg.Key[]; // squares part of the last move ["c3"; "c4"]
   selected?: cg.Key; // square currently selected "a1"
   coordinates: boolean; // include coords attributes
-  coordinatesOnSquares: boolean; // include coords attributes on every square
-  ranksPosition: cg.RanksPosition; // position ranks on either side. left | right
   viewOnly: boolean; // don't bind events: the user will never be able to move pieces around
   disableContextMenu: boolean; // because who needs a context menu on a chessboard
   addPieceZIndex: boolean; // adds z-index values to pieces (for 3D)
@@ -111,8 +109,6 @@ export function defaults(): HeadlessState {
     orientation: 'white',
     turnColor: 'white',
     coordinates: true,
-    coordinatesOnSquares: false,
-    ranksPosition: 'right',
     viewOnly: false,
     disableContextMenu: false,
     addPieceZIndex: false,
