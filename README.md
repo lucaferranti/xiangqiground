@@ -16,10 +16,6 @@ users of your website.
 
 Please read more about GPL for JavaScript on [greendrake.info](https://greendrake.info/publications/js-gpl).
 
-## Demos
-
-- [Embedded PGN viewer](https://github.com/lucaferranti/xiangqi-viewer)
-
 ## Features
 
 - Well typed with TypeScript
