@@ -32,66 +32,58 @@
       import { Xiangqiground } from './dist/xiangqiground.js';
 
       Xiangqiground(document.getElementById('board-1'), {});
-      // Xiangqiground(document.getElementById('board-2'), {
-      //   fen: 'r2q2k1/1p6/p2p4/2pN1rp1/N1Pb2Q1/8/PP1B4/R6K b - - 2 25',
-      // });
-      // Xiangqiground(document.getElementById('board-3'), {
-      //   drawable: {
-      //     autoShapes: [
-      //       {
-      //         orig: 'a2',
-      //         dest: 'a6',
-      //         brush: 'green',
-      //         label: { text: 'A' },
-      //         modifiers: {
-      //           hilite: true,
-      //         },
-      //       },
-      //       {
-      //         orig: 'b2',
-      //         dest: 'b6',
-      //         brush: 'blue',
-      //         label: { text: 'B' },
-      //         modifiers: {
-      //           lineWidth: 6,
-      //         },
-      //       },
-      //       {
-      //         orig: 'c2',
-      //         dest: 'c4',
-      //         brush: 'red',
-      //         label: { text: 'C' },
-      //       },
-      //       {
-      //         orig: 'd2',
-      //         dest: 'd3',
-      //         brush: 'green',
-      //         label: { text: 'D' },
-      //       },
-      //       {
-      //         orig: 'f1',
-      //         dest: 'h3',
-      //         brush: 'blue',
-      //         label: { text: 'F' },
-      //       },
-      //       {
-      //         orig: 'g1',
-      //         dest: 'f3',
-      //         brush: 'yellow',
-      //         label: { text: 'E' },
-      //       },
-      //     ],
-      //   },
-      // });
-      // Xiangqiground(document.getElementById('board-4'), {
-      //   orientation: 'black',
-      //   coordinatesOnSquares: true,
-      //   ranksPosition: 'left',
-      // });
-      // Xiangqiground(document.getElementById('board-5'), {
-      //   orientation: 'white',
-      //   coordinatesOnSquares: true,
-      // });
+      Xiangqiground(document.getElementById('board-2'), {
+        fen: '3k1a3/4a4/4P4/1R4C2/9/9/9/4E1r2/5p3/3AK2H1 b - - 2 25',
+        ranksPosition: 'right',
+      });
+      Xiangqiground(document.getElementById('board-3'), {
+        drawable: {
+          autoShapes: [
+            {
+              orig: 'a2',
+              dest: 'a6',
+              brush: 'green',
+              label: { text: 'A' },
+              modifiers: {
+                hilite: true,
+              },
+            },
+            {
+              orig: 'b2',
+              dest: 'b6',
+              brush: 'blue',
+              label: { text: 'B' },
+              modifiers: {
+                lineWidth: 6,
+              },
+            },
+            {
+              orig: 'c2',
+              dest: 'c4',
+              brush: 'red',
+              label: { text: 'C' },
+            },
+            {
+              orig: 'd2',
+              dest: 'd3',
+              brush: 'green',
+              label: { text: 'D' },
+            },
+            {
+              orig: 'f1',
+              dest: 'h3',
+              brush: 'blue',
+              label: { text: 'F' },
+            },
+            {
+              orig: 'g1',
+              dest: 'f3',
+              brush: 'yellow',
+              label: { text: 'E' },
+            },
+          ],
+        },
+      });
     </script>
   </head>
   <body>
@@ -99,7 +91,7 @@
       basic board, default config
       <div class="xiangqiground" id="board-1"></div>
     </div>
-    <!-- <div>
+    <div>
       board with a fen
       <div class="xiangqiground" id="board-2"></div>
     </div>
@@ -107,13 +99,5 @@
       board with fixed arrows + labels
       <div class="xiangqiground" id="board-3"></div>
     </div>
-    <div>
-      board with coordinates on-square, ranks position left
-      <div class="xiangqiground" id="board-4"></div>
-    </div>
-    <div>
-      board with coordinates on-square
-      <div class="xiangqiground" id="board-5"></div>
-    </div> -->
   </body>
 </html>

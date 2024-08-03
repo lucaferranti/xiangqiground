@@ -1,6 +1,6 @@
 import { HeadlessState } from './state.js';
 import { setVisible, createEl } from './util.js';
-import { colors, files, ranks, Elements } from './types.js';
+import { colors, files, Elements } from './types.js';
 import { createElement as createSVG, setAttributes, createDefs } from './svg.js';
 
 export function renderWrap(element: HTMLElement, s: HeadlessState): Elements {
@@ -63,22 +63,23 @@ export function renderWrap(element: HTMLElement, s: HeadlessState): Elements {
 
   if (s.coordinates) {
     const orientClass = s.orientation === 'black' ? ' black' : '';
-    const ranksPositionClass = s.ranksPosition === 'left' ? ' left' : '';
+    //    const ranksPositionClass = s.ranksPosition === 'left' ? ' left' : '';
 
-    if (s.coordinatesOnSquares) {
-      const rankN: (i: number) => number = s.orientation === 'white' ? i => i + 1 : i => 10 - i;
-      files.forEach((f, i) =>
-        container.appendChild(
-          renderCoords(
-            ranks.map(r => f + r),
-            'squares rank' + rankN(i) + orientClass + ranksPositionClass,
-          ),
-        ),
-      );
-    } else {
-      container.appendChild(renderCoords(ranks, 'ranks' + orientClass + ranksPositionClass));
-      container.appendChild(renderCoords(files, 'files' + orientClass));
-    }
+    container.appendChild(renderCoords(files, 'files' + orientClass));
+    // if (s.coordinatesOnSquares) {
+    //   const rankN: (i: number) => number = s.orientation === 'white' ? i => i + 1 : i => 10 - i;
+    //   files.forEach((f, i) =>
+    //     container.appendChild(
+    //       renderCoords(
+    //         ranks.map(r => f + r),
+    //         'squares rank' + rankN(i) + orientClass + ranksPositionClass,
+    //       ),
+    //     ),
+    //   );
+    // } else {
+    //   container.appendChild(renderCoords(ranks, 'ranks' + orientClass + ranksPositionClass));
+    //   container.appendChild(renderCoords(files, 'files' + orientClass));
+    // }
   }
 
   let ghost: HTMLElement | undefined;
